@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Urcb</title>
+  <title><%= @title %> - URCB</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="mainMenu">
+<ul id="nav">
+<li> <%= link_to_unless_current "Home", :controller => "pages", :action => "home" %> </li>
+<li> <%= link_to_unless_current "Register", :controller => "user", :action => "register" %> </li>
+<li> <%= link_to_unless_current "userHome", :controller => "user", :action => "home" %> </li>
+<li> <%= link_to_unless_current "Logout", :controller => "user", :action => "logout" %> </li>
+<li> <%= link_to_unless_current "About Us", :controller => "pages", :action => "about" %> </li>
+<li> <%= link_to_unless_current "Contact Us", :controller => "", :action => "contact" %> </li>
+</ul>
+</div>
 
 <%= yield %>
 
