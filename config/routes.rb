@@ -1,4 +1,8 @@
 Urcb::Application.routes.draw do
+  get "user/home"
+  get "user/register"
+  get "user/login"
+  get "user/logout"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
