@@ -1,4 +1,7 @@
 Urcb::Application.routes.draw do
+  get "pages/home"
+  get "pages/about"
+  get "pages/contact"
   get "user/home"
   get "user/register"
   get "user/login"
