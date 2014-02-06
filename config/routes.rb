@@ -1,11 +1,13 @@
 Urcb::Application.routes.draw do
-  get "pages/home"
-  get "pages/about"
-  get "pages/contact"
-  get "user/home"
-  get "user/register"
-  get "user/login"
-  get "user/logout"
+match ':controller(/:action(/:id))', :via => [:get, :post]
+root "pages#home"
+  #get "pages/home"
+  #get "pages/about"
+  #get "pages/contact"
+  #get "user/home"
+  #get "user/register"
+  #get "user/login"
+  #get "user/logout"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
