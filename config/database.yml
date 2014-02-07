@@ -57,4 +57,4 @@ production:
   database: urcb_production
   pool: 5
   username: urcb
-  password:
+  password: admin

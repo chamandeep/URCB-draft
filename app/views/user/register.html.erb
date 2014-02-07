@@ -1,2 +1,12 @@
-<h1>User#register</h1>
-<p>Find me in app/views/user/register.html.erb</p>
+﻿<h1>Register a new account</h1>
+<p>
+Please complete the form below to register to the URCB network.
+</p>
+<br>
+<%= form_for(:User, :url => {:action => 'new'}) do |f| %>
+<table class="tblRegister" id="tblRegister">
+<tr>
+<th>
+<%= label_tag ("First Name:") %> </th>
+<td>
+<% end %>

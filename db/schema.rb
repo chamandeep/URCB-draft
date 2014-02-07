@@ -16,21 +16,6 @@ ActiveRecord::Schema.define(version: 20140206201654) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "car_drivers", force: true do |t|
-    t.integer  "driver_id"
-    t.integer  "car_id"
-    t.string   "drives"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "cars", force: true do |t|
-    t.string   "name"
-    t.integer  "door"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "courses", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -42,13 +27,6 @@ ActiveRecord::Schema.define(version: 20140206201654) do
   create_table "disabilities", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "drivers", force: true do |t|
-    t.string   "name"
-    t.string   "age"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
