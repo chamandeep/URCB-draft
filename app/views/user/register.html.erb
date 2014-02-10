@@ -3,10 +3,66 @@
 Please complete the form below to register to the URCB network.
 </p>
 <br>
-<%= form_for(:User, :url => {:action => 'new'}) do |f| %>
+<%= form_for(:user) do |f| %>
 <table class="tblRegister" id="tblRegister">
 <tr>
-<th>
-<%= label_tag ("First Name:") %> </th>
-<td>
+<th> <%= f.label :firstName, "First Name:" %> </th>
+<td> <%= f.text_field :firstName %> </td>
+</tr>
+<tr>
+<th> <%= f.label :lastName, "Last Name:" %> </th>
+<td> <%= f.text_field :lastName %> </td>
+</tr>
+<tr>
+<th> <%= f.label :dob, "Date of Birth:" %> </th>
+<td> <%= f.date_field :dob %> </td>
+</tr>
+<tr>
+<th> <%= f.label :email, "Email:" %> </th>
+<td> <%= f.email_field :email %> </td>
+</tr>
+<tr>
+<th> <%= f.label :email_confirmation, "Confirm Email:" %> </th>
+<td> <%= f.email_field :email_confirmation %> </td>
+</tr>
+<tr>
+<th> <%= f.label :password, "Password" %> </th>
+<td> <%= f.password_field :password %> </td>
+</tr>
+<tr>
+<th> <%= f.label :password_confirmation, "Confirm Password:" %> </th>
+<td> <%= f.password_field :password_confirmation %> </td>
+</tr>
+<tr>
+<th> <%= f.label :bio, "Personal Profile:" %> </th>
+<td> <%= f.text_area :bio %> </td>
+</tr>
+<tr>
+<th> <%= f.label :address1, "Address line1" %> </th>
+<td> <%= f.text_field :address1 %> </td>
+</tr>
+<tr>
+<th> <%= f.label :address2, "Address line2" %> </th>
+<td> <%= f.text_field :address2 %> </td>
+</tr>
+<tr>
+<th> <%= f.label :town, "Town:" %> </th>
+<td> <%= f.text_field :town %> </td>
+</tr>
+<tr>
+<th> <%= f.label :county, "County:" %> </th>
+<td> <%= f.text_field :county %> </td>
+</tr>
+<tr>
+<th> <%= f.label :postcode, "Postcode:" %> </th>
+<td> <%= f.text_field :postcode %> </td>
+</tr>
+<tr>
+<th> <%= f.label :contact_number, "Contact Number:" %> </th>
+<td> <%= f.text_field :contactNumber %> </td>
+</tr>
+<tr>
+<td colspan="2"> <%= f.submit "Register" %> </td>
+</tr>
+</table>
 <% end %>
