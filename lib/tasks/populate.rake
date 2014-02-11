@@ -1,3 +1,4 @@
+
 namespace :db do
 desc "Fill database with sample data"
 task populate: :environment do
@@ -5,19 +6,30 @@ make_users
 make_friendships
 end
 end
+require 'faker'
+
 def make_users
-admin = User.create!(firstName:     "Example User",
+User.create!(firstName:     "Example User",
 lastName: "surname",
-email: "example@railstutorial.org",
-password: "foobar",
-admin: true)
+email: "example@urcb.co.uk",
+password: "test")
 99.times do |n|
-name  = Faker::Name.name
-email = "example-#{n+1}@railstutorial.org"
+firstName = Faker::Name.name
+lastName = Faker::Name.name
+email = "example-#{n+1}@urcb.co.uk"
 password  = "password"
-User.create!(name:     name,
+User.create!(firstName:     firstName,
+lastName: lastName,
 email:    email,
 password: password)
 end
 end
 
+def make_friendships
+  users = User.all
+  user  = users.first
+  followed_users = users[2..15]
+  followers      = users[2..15]
+  followed_users.each { |followed| user.follow!(followed) }
+  followers.each      { |follower| follower.follow!(user) }
+end

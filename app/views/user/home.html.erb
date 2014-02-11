@@ -1,2 +1,5 @@
-<h1>User#home</h1>
-<p>Find me in app/views/user/home.html.erb</p>
+<%= @user = User.find(session[:user_id]) %>
+<h1><%= [@user.firstName, @user.lastName].join(" ") %>My home page </h1>
+<p>
+</p>
+<%= render 'shared/stats' %>
