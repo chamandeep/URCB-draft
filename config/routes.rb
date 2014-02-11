@@ -1,4 +1,9 @@
 Urcb::Application.routes.draw do
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 match ':controller(/:action(/:id))', :via => [:get, :post]
 root "pages#home"
   #get "pages/home"
