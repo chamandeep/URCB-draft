@@ -1,4 +1,10 @@
 class UserController < ApplicationController
+
+def following
+    @user = User.find(params[id])
+	        @users = @user.followed_users(param[:user_id])
+end
+
   def home
   @title = "Your Home Page"
   end
@@ -35,4 +41,6 @@ end
   def user_params
   params.require(:user).permit(:firstName, :lastName, :dob, :email,  :password,  :bio, :address1, :address2, :town, :county, :postcode, :contactNumber)
   end
+  
+
 end

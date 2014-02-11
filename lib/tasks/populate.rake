@@ -14,8 +14,8 @@ lastName: "surname",
 email: "example@urcb.co.uk",
 password: "test")
 99.times do |n|
-firstName = Faker::Name.name
-lastName = Faker::Name.name
+firstName = Faker::Name.first_name
+lastName = Faker::Name.last_name
 email = "example-#{n+1}@urcb.co.uk"
 password  = "password"
 User.create!(firstName:     firstName,
